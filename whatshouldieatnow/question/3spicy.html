@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="question.css">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap" rel="stylesheet">
+  </head>
+  <script>
+  temp = location.href.split("?")
+  data = temp[1]
+  value1 = data
+
+  function move1_push(){
+    value1 += document.getElementById("button1").value;
+    location.href="./result.html?" + value1;
+  }
+
+  function move2_push(){
+    value1 += document.getElementById("button2").value;
+    location.href="./result.html?" + value1;
+  }
+
+  </script>
+
+  <body>
+    <p class="title">
+      <img src="90231b6d5774dc9.png" align="bottom">오늘은 매운 것이 끌린다?<img src="90231b6d5774dc9.png" align="bottom">
+    </p>
+
+    <button id = "button1" aria-label='고르러가기' class='h-button centered button1' data-text='YES' value=1  href="javascript:void(0);" onclick="move1_push()">
+      <span>매</span>
+      <span>운</span>
+      <span>거</span>
+      <span>좋</span>
+      <span>아</span>
+      <span>!</span>
+    </button>
+
+    <button id = "button2" aria-label='고르러가기' class='h-button centered button2' data-text='NO' value=0  href="javascript:void(0);" onclick="move2_push()">
+      <span>매</span>
+      <span>운</span>
+      <span>거</span>resultan>별</span>
+      <span>로</span>
+      <span>.</span>
+      <span>.</span>
+      <span>.</span>
+    </button>
+
+  </body>
+</html>

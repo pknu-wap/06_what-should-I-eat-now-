@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Menu</title>
+    <meta charset="utf-8">
+    <script src="include.js"></script>
+    <link rel="stylesheet" href="menu_result.css">
+    <style>
+      button{
+        display:grid;
+        grid-template-colums; 1fr 1fr;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <h1> 오늘 먹을 음식은? </h1>
+
+    <form name="search" id="search">
+    <input type="text" id="sc" name="sc" value="">
+    </form>
+
+    <script>
+
+    temp = location.href.split("?")
+    data = temp[1]
+    value1 = data
+
+    var final_menu = [];
+
+
+    var menu_ar = [["111","국밥"],
+                ["110","피자"],
+                ["100","탕수육"]]
+
+    for (var i = 0; i<3 ; i++)
+    {
+      if(menu_ar[i][0] == value1)
+      {
+        final_menu = menu_ar[i][1];
+      }
+    }
+
+      var randText = final_menu;
+      search.sc.value = randText;
+
+    </script>
+    <div class="button">
+      <a href="restaurant.html" class="button1">
+        음식점 추천 보기
+      </a>
+      <a href="./1rice.html" class="button2">
+        다시하기
+      </a>
+      <a href="main.html" class="button3">
+        처음으로 돌아가기
+      </a>
+    <div>
+  </body>
+</html>
