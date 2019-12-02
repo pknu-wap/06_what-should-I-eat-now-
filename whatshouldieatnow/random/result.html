@@ -9,7 +9,7 @@
 
   <body>
     <p class="title">
-      선택된 메뉴는?
+      오늘의 랜덤 메뉴는?
     </p>
 
     <form name="search" id="search">
@@ -18,27 +18,11 @@
 
     <script>
 
-    temp = location.href.split("?")
-    data = temp[1]
-    value1 = data
-
-    var final_menu = [];
-
-
-    var menu_ar = [["11001001","국밥"],
-                ["40011010","불고기피자"],
-                ["20001010","탕수육"]]
-
-    for (var i = 0; i<3 ; i++)
-    {
-      if(menu_ar[i][0] == value1)
-      {
-        final_menu = menu_ar[i][1];
-      }
-    }
-
-      var randText = final_menu;
-      search.sc.value = randText;
+    menu = new Array();
+    menu = ["짜장면","탕수육","볶음밥","유산슬","깐풍기","짜장라면","순두부찌개","삼겹살","양념치킨","후라이드치킨"]
+    rand = Math.floor( menu.length * Math.random());
+    randText = menu[rand];
+    search.sc.value = randText;
 
     </script>
 
@@ -49,7 +33,7 @@
       <span>기</span>
     </a>
 
-    <a aria-label='고르러가기' class='h-button centered button2' data-text='다시 메뉴 고르기' href='./1rice.html'>
+    <a aria-label='고르러가기' class='h-button centered button2' data-text='다시 메뉴 고르기' href='./result.html'>
       <span>고</span>
       <span>르</span>
       <span>러</span>

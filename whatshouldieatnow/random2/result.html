@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Result</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="result.css">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <p class="title">
+      오늘의 랜덤 메뉴는?
+    </p>
+
+    <div class="box-roulette">
+	     <div class="markers"></div>
+	      <button type="button" id="btn-start">
+		        돌려 돌려<br>돌림판
+	      </button>
+	      <div class="roulette" id="roulette"></div>
+    </div>
+
+    <a aria-label='고르러가기' class='h-button centered button1' data-text='음식점 추천 보기' href='../restaurant/restaurant.html'>
+      <span>보</span>
+      <span>러</span>
+      <span>가</span>
+      <span>기</span>
+    </a>
+
+    <a aria-label='고르러가기' class='h-button centered button2' data-text='처음으로 돌아가기' href='../main/main.html'>
+      <span>돌</span>
+      <span>아</span>
+      <span>가</span>
+      <span>기</span>
+    </a>
+    
+    <script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./result.js"></script>
+    <script type="text/javascript" src="https://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.min.js">
+
+    </script>
+  </body>
+</html>

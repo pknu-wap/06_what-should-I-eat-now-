@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="0taste.css">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap" rel="stylesheet">
+  </head>
+
+  <script>
+
+  function move1_push(){
+    var value1 = document.getElementById("button1").value;
+    location.href="./1rice.html?" + value1;
+  }
+
+  function move2_push(){
+    var value1 = document.getElementById("button2").value;
+    location.href="./1rice.html?" + value1;
+  }
+
+  function move3_push(){
+    var value1 = document.getElementById("button3").value;
+    location.href="./1rice.html?" + value1;
+  }
+
+  function move4_push(){
+    var value1 = document.getElementById("button4").value;
+    location.href="./1rice.html?" + value1;
+  }
+
+  function move5_push(){
+    var value1 = document.getElementById("button5").value;
+    location.href="./1rice.html?" + value1;
+  }
+  </script>
+
+  <body>
+    <p class="title">
+      Q1. 어떤 종류의 음식을 선택하시겠습니까?
+    </p>
+
+    <button  id = "button1" aria-label='고르러가기' class='h-button centered button1' data-text='한식' value=1 type="submit" href="javascript:void(0);" onclick="move1_push()">
+      <span>G</span>
+      <span>O</span>
+      <span>!</span>
+    </button>
+
+    <button  id = "button2" aria-label='고르러가기' class='h-button centered button2' data-text='중식' value=2 type="submit" href="javascript:void(0);" onclick="move2_push()">
+      <span>G</span>
+      <span>O</span>
+      <span>!</span>
+    </button>
+
+    <button  id = "button3" aria-label='고르러가기' class='h-button centered button3' data-text='일식' value=3 type="submit" href="javascript:void(0);" onclick="move3_push()">
+      <span>G</span>
+      <span>O</span>
+      <span>!</span>
+    </button>
+
+    <button  id = "button4" aria-label='고르러가기' class='h-button centered button4' data-text='양식' value=4 type="submit" href="javascript:void(0);" onclick="move4_push()">
+      <span>G</span>
+      <span>O</span>
+      <span>!</span>
+    </button>
+
+    <button  id = "button5" aria-label='고르러가기' class='h-button centered button5' data-text='디저트' value=5 type="submit" href="javascript:void(0);" onclick="move5_push()">
+      <span>G</span>
+      <span>O</span>
+      <span>!</span>
+    </button>
+
+  </body>
+</html>

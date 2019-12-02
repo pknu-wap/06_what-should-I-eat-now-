@@ -9,13 +9,17 @@
 
   <script>
 
+  temp = location.href.split("?")
+  data = temp[1]
+  value1 = data
+
   function move1_push(){
-    var value1 = document.getElementById("button1").value;
+    value1 += document.getElementById("button1").value;
     location.href="./2noodle.html?" + value1;
   }
 
   function move2_push(){
-    var value1 = document.getElementById("button2").value;
+    value1 += document.getElementById("button2").value;
     location.href="./2noodle.html?" + value1;
   }
 
@@ -23,7 +27,7 @@
 
   <body>
     <p class="title">
-      <img src="90231b6d5774dc9.png" align="bottom">오늘은 밥 종류가 끌린다?<img src="90231b6d5774dc9.png" align="bottom">
+      Q1. 밥 종류가 끌리십니까?
     </p>
 
     <button id = "button1" aria-label='고르러가기' class='h-button centered button1' data-text='YES' value=1 type="submit" href="javascript:void(0);" onclick="move1_push()">
