@@ -19,14 +19,20 @@
     <script>
 
     menu = new Array();
-    menu = ["짜장면","탕수육","볶음밥","유산슬","깐풍기","짜장라면","순두부찌개","삼겹살","양념치킨","후라이드치킨"]
+    menu = ["국밥","탕수육","피자"]
     rand = Math.floor( menu.length * Math.random());
+    result = rand;
     randText = menu[rand];
     search.sc.value = randText;
 
+    function move1_push(){
+      var value1 = rand;
+      location.href="../restaurant/restaurant.html?" + value1;
+    }
+
     </script>
 
-    <a aria-label='고르러가기' class='h-button centered button1' data-text='음식점 추천 보기' href='../restaurant/restaurant.html'>
+    <a aria-label='고르러가기' class='h-button centered button1' data-text='음식점 추천 보기' style="cursor:pointer" onclick="move1_push()">
       <span>보</span>
       <span>러</span>
       <span>가</span>
@@ -49,4 +55,3 @@
     </a>
 
   </body>
-</html>

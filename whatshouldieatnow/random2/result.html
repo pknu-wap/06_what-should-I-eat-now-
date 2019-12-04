@@ -7,7 +7,14 @@
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   </head>
-
+  <script>
+   function move1(){
+    location.href="../restaurant/restaurant.html?";
+  }
+  function move2(){
+      location.href="../main/main.html?"
+    }
+  </script>
   <body>
     <p class="title">
       오늘의 랜덤 메뉴는?
@@ -18,22 +25,22 @@
 	      <button type="button" id="btn-start">
 		        돌려 돌려<br>돌림판
 	      </button>
-	      <div class="roulette" id="roulette"></div>
+        <div class="roulette" id  ="roulette"></div>
     </div>
 
-    <a aria-label='고르러가기' class='h-button centered button1' data-text='음식점 추천 보기' href='../restaurant/restaurant.html'>
+    <button id="button1" aria-label='고르러가기' class='h-button centered button1' data-text='음식점 추천 보기' href="javascript:void(0);" onclick="move1()">
       <span>보</span>
       <span>러</span>
       <span>가</span>
       <span>기</span>
-    </a>
+    </button>
 
-    <a aria-label='고르러가기' class='h-button centered button2' data-text='처음으로 돌아가기' href='../main/main.html'>
+    <button id="button2" aria-label='고르러가기' class='h-button centered button2' data-text='처음으로 돌아가기' href="javascript:void(0);" onclick="move2()">
       <span>돌</span>
       <span>아</span>
       <span>가</span>
       <span>기</span>
-    </a>
+    </button>
     
     <script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="./result.js"></script>

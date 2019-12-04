@@ -17,11 +17,19 @@
     </form>
 
     <script>
-
     temp = location.href.split("?")
     data = temp[1]
     value1 = data
-
+    function move1_push(){
+    value1 += document.getElementById("button1").value;
+    location.href="../restaurant/restaurant.html?"+value1;
+  }
+    function move2(){
+      location.href="0taste.html?";
+    }
+    function move3(){
+      location.href="../main/main.html?";
+    }
     var final_menu = [];
 
 
@@ -37,32 +45,34 @@
       }
     }
 
-      var randText = final_menu;
-      search.sc.value = randText;
+  var randText = final_menu;
+  search.sc.value = randText;
 
-    </script>
+  </script>
 
-    <a aria-label='고르러가기' class='h-button centered button1' data-text='음식점 추천 보기' href='../restaurant/restaurant.html'>
-      <span>보</span>
-      <span>러</span>
-      <span>가</span>
-      <span>기</span>
-    </a>
+  <button id = "button1" aria-label='고르러가기' class='h-button centered button1' data-text='음식점 추천 보기' href="javascript:void(0);" onclick="move1_push()">
+  <span>보</span>
+  <span>러</span>
+  <span>가</span>
+  <span>기</span>
 
-    <a aria-label='고르러가기' class='h-button centered button2' data-text='다시 메뉴 고르기' href='./1rice.html'>
+  </button>
+
+
+  <button id="button2" aria-label='고르러가기' class='h-button centered button2' data-text='다시 메뉴 고르기' href="javascript:void(0);" onclick="move2()">
       <span>고</span>
       <span>르</span>
       <span>러</span>
       <span>가</span>
       <span>기</span>
-    </a>
+  </button>
 
-    <a aria-label='고르러가기' class='h-button centered button3' data-text='처음으로 돌아가기' href='../main/main.html'>
+    <button id="button3" aria-label='고르러가기' class='h-button centered button3' data-text='처음으로 돌아가기' href="javascript:void(0);" onclick="move3()">
       <span>돌</span>
       <span>아</span>
       <span>가</span>
       <span>기</span>
-    </a>
+    </button>
 
   </body>
 </html>

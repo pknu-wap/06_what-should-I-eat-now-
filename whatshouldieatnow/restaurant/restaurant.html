@@ -6,23 +6,100 @@
     <link rel="stylesheet" href="restaurant.css">
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
   </head>
   <body>
-    <p class="title">
+    <p class="title1">
       음식점 추천
     </p>
+    
 
-    <div class="container">
-      <h1>댓글 기능, 위치기반 서비스를 넣을 상자</h1>
+      <div class="mapinfo">
+      <li id="info"></li>
+      <li id="map"></li>
+      <img src="pizza1.jpg" id="img1">
     </div>
+     <script type="text/javascript">
+     
+    temp = location.href.split("?")
+    data = temp[1]
+    value1 = data
+    value1*=1
+    var imageArr=["pizza1.jpg","pizza2.jpg","pizza3.jpg","pizza4.jpg","pizza5.jpg","pizza6.jpg"];
+         var korean=[
+         [35.136449,129.1002788,'미스터피자','<li class="title">미스터피자</li>'+'<li class="content">▲ 아모르파티R 노엣지 28500￦<br>▲ 아모르파티 쉬름프R 노엣지 28500￦<br>▲ 씨푸드아일랜드R 골드 29500￦<br>▲ 하프앤하프R 골드 27900￦<br>▲ 쉬림프골드R 27900￦<br>▲ 포테이토골드R 26900￦<br><br><br>◆ 부산광역시 남구 대연3동 50-30<br>◆ 051-623-1082</li>'],
+    [35.13756,129.1034733,'원플러스피자','<li class="title">원플러스피자</li>'+'<li class="content">▲ 단호박골드 25000￦<br>▲ 앙치즈바이트 22900▲ ￦<br>▲ 크라운화이트 25000￦<br>▲ 베이컨포테이토골드 25000￦<br>▲ 쉬림프골드 25000￦<br>▲ 고구마치즈스트링 23000￦<br><br><br>◆ 부산광역시 남구 대연3동 40-3<br>◆ 051-612-2330</li>'],
+    [35.13586,129.1025479,'피자마루','<li class="title">피자마루</li>'+'<li class="content">▲ 쉬림프 깐풍 피자 14900￦<br>▲ 치폴레 스테이크 피자 14900￦<br>▲ 씨푸드 새게 피자 14900￦<br>▲ 몽빼르 피자 15900￦<br>▲ 크레이지 불새 피자 15900￦<br><br><br>◆ 부산광역시 남구 대연3동 40-3<br>◆ 051-612-2330</li>'],
+    [35.1374704,129.1050029,'반올림피자샵','<li class="title">반올림피자샵</li>'+'<li class="content">▲ 오리지널피자R+오븐스파게티 16500￦<br>▲ 오리지널피자L+오븐스파게티 18500￦<br>▲ 오리지널피자L+훈제치킨 24000￦<br>▲ 오리지널피자R+훈제치킨 22000￦<br><br><br>◆ 부산 남구 용소로19번길 88<br>◆ 051-628-3888<br></li>'],
+    [35.1339352,129.1004549,'피자에땅','<li class="title">피자에땅</li>'+'<li class="content">▲ 맵고달고피자 22900￦<br>▲ 신세개피자2 19900￦<br>▲마불 피자 18900￦<br>▲ 울트라콤비네이션 18900￦<br>▲ 리얼고구마 18900￦<br>▲ 퐁듀눈꽃치즈피자 21900￦<br><br><br>◆ 부산 남구 용소로40번길 10<br>◆ 051-627-1700</li>'],
+    [35.1352788,129.0991187,'피자브로','<li class="title">피자브로</li>'+'<li class="content">▲ 숯불돼지 철판김치브로 18500￦<br>▲ 직화소불고기브로 18500￦<br>▲ 몰디브쉬림프브로 18500￦<br>▲ 스윗고구마피자 13500￦<br>▲ 페페로니피자 13500￦<br>▲ 아이원트피자 14500￦<br><br><br>◆ 부산 남구 용소로14번길 37-1<br>◆ 051-623-8792</li>']
+];
+var pizza=[
+[35.136449,129.1002788,'미스터피자','<li class="title">미스터피자</li>'+'<li class="content">▲ 아모르파티R 노엣지 28500￦<br>▲ 아모르파티 쉬름프R 노엣지 28500￦<br>▲ 씨푸드아일랜드R 골드 29500￦<br>▲ 하프앤하프R 골드 27900￦<br>▲ 쉬림프골드R 27900￦<br>▲ 포테이토골드R 26900￦<br><br><br>◆ 부산광역시 남구 대연3동 50-30<br>◆ 051-623-1082</li>'],
+    [35.13756,129.1034733,'원플러스피자','<li class="title">원플러스피자</li>'+'<li class="content">▲ 단호박골드 25000￦<br>▲ 앙치즈바이트 22900▲ ￦<br>▲ 크라운화이트 25000￦<br>▲ 베이컨포테이토골드 25000￦<br>▲ 쉬림프골드 25000￦<br>▲ 고구마치즈스트링 23000￦<br><br><br>◆ 부산광역시 남구 대연3동 40-3<br>◆ 051-612-2330</li>'],
+    [35.13586,129.1025479,'피자마루','<li class="title">피자마루</li>'+'<li class="content">▲ 쉬림프 깐풍 피자 14900￦<br>▲ 치폴레 스테이크 피자 14900￦<br>▲ 씨푸드 새게 피자 14900￦<br>▲ 몽빼르 피자 15900￦<br>▲ 크레이지 불새 피자 15900￦<br><br><br>◆ 부산광역시 남구 대연3동 40-3<br>◆ 051-612-2330</li>'],
+    [35.1374704,129.1050029,'반올림피자샵','<li class="title">반올림피자샵</li>'+'<li class="content">▲ 오리지널피자R+오븐스파게티 16500￦<br>▲ 오리지널피자L+오븐스파게티 18500￦<br>▲ 오리지널피자L+훈제치킨 24000￦<br>▲ 오리지널피자R+훈제치킨 22000￦<br><br><br>◆ 부산 남구 용소로19번길 88<br>◆ 051-628-3888<br></li>'],
+    [35.1339352,129.1004549,'피자에땅','<li class="title">피자에땅</li>'+'<li class="content">▲ 맵고달고피자 22900￦<br>▲ 신세개피자2 19900￦<br>▲마불 피자 18900￦<br>▲ 울트라콤비네이션 18900￦<br>▲ 리얼고구마 18900￦<br>▲ 퐁듀눈꽃치즈피자 21900￦<br><br><br>◆ 부산 남구 용소로40번길 10<br>◆ 051-627-1700</li>'],
+    [35.1352788,129.0991187,'피자브로','<li class="title">피자브로</li>'+'<li class="content">▲ 숯불돼지 철판김치브로 18500￦<br>▲ 직화소불고기브로 18500￦<br>▲ 몰디브쉬림프브로 18500￦<br>▲ 스윗고구마피자 13500￦<br>▲ 페페로니피자 13500￦<br>▲ 아이원트피자 14500￦<br><br><br>◆ 부산 남구 용소로14번길 37-1<br>◆ 051-623-8792</li>']
+];
+var markers=[];
+function initMap(){
+    var map= new google.maps.Map(document.getElementById('map'),{
+        zoom:16,
+        center: new google.maps.LatLng(35.1367833,129.1016051)
+    })
+    if(0<=value1<=2)
+    for(var i=0;i<pizza.length;i++)
+    setMarker1(map);
+    else
+      for(var i=0;i<pizza.length;i++)
+          setMarker1(map);
+  }
 
+var i=0;
+
+function setMarker1(map){
+    var korea,marker;
+    
+        korea=pizza[i];
+        marker = new google.maps.Marker({
+        map: map,
+        animation: google.maps.Animation.DROP,
+        position:{lat:korea[0],lng:korea[1]}
+    });
+    markers.push(marker);
+    document.getElementById("info").innerHTML=korea[3];
+    google.maps.event.addListener(marker,'click',(function(){
+      return function(){     
+        document.getElementById("info").innerHTML=korea[3];
+        img1=document.getElementById("img1");
+        img1.src=imageArr[i];
+        toggleBounce(marker);
+        }
+    })(marker,i))
+    i++;
+}
+function toggleBounce(marker) {
+    
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+    setTimeout(function ()
+    {
+        marker.setAnimation(null);
+        $(marker).dequeue();
+    }, 1400);
+  }
+
+ 
+</script> 
+   </div>
     <div class="menu">
       <div class="label">Menu</div>
       <div class="spacer"></div>
       <div class="item" onclick="location.href='../main/main.html';"><span>Main</span></div>
       <div class="item" onclick="location.href='../random/result.html';"><span>Random</span></div>
       <div class="item" onclick="location.href='../question/0taste.html';"><span>Taste</span></div>
-    </div>
-
+    
+    </div></script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv43g4FLoZD_0uRGFPnveo-uq_2puaopE&callback=initMap"></script>
   </body>
 </html>

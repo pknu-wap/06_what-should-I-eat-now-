@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Menu</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="random_menu_style.css">
+    <style>
+      button{
+        display:grid;
+        grid-template-colums; 1fr 1fr;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <h1> 오늘 먹을 음식은? </h1>
+
+    <form name="search" id="search">
+    <input type="text" id="sc" name="sc" value="">
+    </form>
+
+    <script>
+    menu = new Array();
+    menu = ["짜장면","탕수육","볶음밥","유산슬","깐풍기","짜장라면","순두부찌개","삼겹살","양념치킨","후라이드치킨"]
+    rand = Math.floor( menu.length * Math.random());
+    randText = menu[rand];
+    search.sc.value = randText;
+    </script>
+
+    <div class="button">
+      <a href="restaurant.html" class="button1">
+        음식점 추천 보기
+      </a>
+      <a href="random_menu.html" class="button2">
+        다시하기
+      </a>
+      <a href="main.html" class="button3">
+        처음으로 돌아가기
+      </a>
+      </a>
+    <div>
+  </body>
+</html>

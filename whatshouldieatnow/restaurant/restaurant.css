@@ -3,6 +3,24 @@
   height: 70%;
   border: 50px solid;
 }
+html { font-size: 55%; }
+body { font-size: 1em;}
+
+@media (max-width: 300px) {
+    html { font-size: 70%; }
+}
+
+@media (min-width: 500px) {
+    html { font-size: 80%; }
+}
+
+@media (min-width: 700px) {
+    html { font-size: 100%; }
+}
+
+@media (min-width: 1200px) {
+    html { font-size: 120%; }
+}
 
 body {
   background-color: rgb(255,234,178);
@@ -10,24 +28,20 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-.title {
+.title1 {
   font-family: 'Black Han Sans', sans-serif;
   font-size: 100px;
   color: white;
   -webkit-text-stroke: 5px #000;
   text-align: center;
   position: relative;
-  top: -100px;
+  margin:10px;
+  padding:10px;
 }
 
 * {box-sizing: border-box;}
 
-.container {
-  border: 3px solid white;
-  border-radius: .4em;
-  padding: 10px;
-  background-color: white;
-}
+
 
 h1 {
   color: black;
@@ -153,4 +167,74 @@ span {
 }
 .menu:hover .item:nth-child(10) {
   transition-delay: 0.7s;
+}
+
+.mapinfo{
+  position: absolute;
+  float: left;
+  left:5%;
+  padding: 0px 20px;
+  top:21%;
+  width: 90%;
+  height:58%;
+}
+
+.mapinfo #info{
+  position: absolute;
+  width:30%;
+  height:100%;
+  padding: 10px 20px;
+ 
+}
+.mapinfo #map{
+  position: absolute;
+  left:31%;
+  padding: 10px 20px;
+  width: 30%;
+  height:100%;
+  color: #190707;
+  border-radius: 30px;
+}
+
+.mapinfo #img{
+  position: absolute;
+  background-color: #fff;
+  width:30%;
+  height: 100%;
+  padding: 10px 20px;
+  float:right;
+  right:8%; 
+  background-image:url(90231b6d5774dc9.png);
+}
+
+.mapinfo .title{
+  text-decoration: none;
+  position: top;
+  line-height: 40px;
+  text-align: justify;
+  font-size:3rem;
+  width:100%;
+  border-radius: 6px 6px 0 0;
+  margin: -1px -1px 0 -1px;
+  padding:20px 1px 20px; color: rgb(255,234,178);
+  background: rgb(255, 255, 255);
+  border-radius: 30px 30px 0px 0px;
+  border-bottom: 2px solid rgb(5, 5, 5);
+  font-family: 'Black Han Sans', sans-serif;
+  -webkit-text-stroke: 2px #000;
+}
+
+.mapinfo .content{
+  font-size: 1rem;
+  background:#fff;
+  width:100%;
+  height: 75%;
+  border-radius: 0px 0px 30px 30px;
+}
+
+.mapinfo #img1{
+  position: relative;
+  left:63%;
+  width:30%;
+  height:100%;
 }
